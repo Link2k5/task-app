@@ -9,13 +9,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
 model Task {
-  id Int @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   description String
-  completed Boolean
-  createdAt DateTime? @default(now())
+  completed   Boolean
+  createdAt   DateTime? @default(now())
 }
